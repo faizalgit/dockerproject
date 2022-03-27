@@ -7,11 +7,13 @@ node{
 			sh 'docker build -t faizaldocker/simpleproject .'
 		}
 	}
-	stage('Login'){
-			DOCKER_CRED=credentials('faizaldocker')
-			sh 'echo $DOCKER_CRED | docker login -u $DOCKER_CRED_USR --password-stdin'
+	stage('Push to DockerHub'){
+		
+		withCredentials([usernamePassword(credentialsId: 'faizaldocker',
+                              usernameVariable: 'username',
+                              passwordVariable: 'password')]){
+                              sh('echo $password | docker login -u $username --passwrod-stdin')}
+		sh 'docker push faizaldocker/simpleproject'
 	}
-	stage("push to dockerhub"){
-			sh 'docker push faizaldocker/simpleproject'
-	}
+	
 }
