@@ -20,7 +20,7 @@ node{
 	withCredentials([usernamePassword(credentialsId: 'FaizalNexus',
                               usernameVariable: 'username',
                               passwordVariable: 'password')]){
-                              sh('docker login http://${username}:${password}@104.196.30.112:9001/repository/docker-repo')}
+                              sh('docker login http://104.196.30.112:9001/repository/docker-repo | echo $password | -u $username --password-stdin')}
 			      sh 'docker push faizaldocker/simpleproject'
 	}
 	
