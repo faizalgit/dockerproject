@@ -1,9 +1,9 @@
 def dockerfilePath
 
 node{
-	dockerfilePath=/opt/dockerfile
+	dockerfilePath='/opt/dockerfile'
 	stage("build"){
-		dir('dockerfilePath'){
+		dir("${dockerfilePath}"){
 			docker build -t faizaldocker/simpleproject
 		}
 	}
