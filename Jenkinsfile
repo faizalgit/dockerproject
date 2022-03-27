@@ -17,7 +17,7 @@ node{
 //	}
 	
 	stage ('push to Git'){
-	withCredentials([usernamePassword(credentialsId: 'FaizalGit',
+	withCredentials([usernamePassword(credentialsId: 'FaizalNexus',
                               usernameVariable: 'username',
                               passwordVariable: 'password')]){
                               sh('docker login https://${username}:${password}@github.com/faizalgit/dockerproject	')}
