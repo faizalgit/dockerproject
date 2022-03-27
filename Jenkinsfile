@@ -4,7 +4,8 @@ node{
 	dockerfilePath='/dockerfiles'
 	stage("build"){
 		dir("${dockerfilePath}"){
-			sh 'docker build -t faizaldocker/simpleproject .'
+			sh 'mkdir test'
+			//sh 'docker build -t faizaldocker/simpleproject .'
 		}
 	}
 }
