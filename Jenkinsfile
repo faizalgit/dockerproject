@@ -8,7 +8,7 @@ node{
 		}
 	}
 	stage('Login'){
-			sh 'echo $DOCKERHUB_CRED | docker login -u $DOCKERHUB_CRED_USR --password-stdin'
+			sh 'echo $faizaldocker | docker login -u $faizaldocker_USR --password-stdin'
 	}
 	stage("push to dockerhub"){
 			sh 'docker push faizaldocker/simpleproject'
