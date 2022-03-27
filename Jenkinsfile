@@ -1,9 +1,9 @@
 def dockerfilePath
 
 node{
-	dockerfilePath='/dockerfiles'
+	dockerfilePath='/var/lib/jenkins/dockerfiles'
 	stage("build"){
-		dir('/dockerfiles'){
+		dir(dockerfilePath){
 			sh 'id'
 			sh 'whoami'
 			//sh 'mkdir test'
