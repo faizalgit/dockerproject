@@ -4,7 +4,7 @@ node{
 	dockerfilePath='/opt/dockerfile'
 	stage("build"){
 		dir("${dockerfilePath}"){
-			docker build -t faizaldocker/simpleproject
+			docker build -t faizaldocker/simpleproject .
 		}
 	}
 }
