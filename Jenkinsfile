@@ -24,7 +24,7 @@ node{
                               sh('echo $password | docker login -u $username --password-stdin http://104.196.30.112:9001')}
 		//sh 'docker push faizaldocker/simpleproject'
 		sh 'docker tag 73875c91fadf 104.196.30.112:9001/simpleproject:simpledocker'
-		sh 'docker push http://104.196.30.112:9001:simpleproject:latest'
+		sh 'docker push http://104.196.30.112:9001/simpleproject:simpledocker'
 	}
 	
 //	docker.withServer('http://104.196.30.112:9001', 'swarm-certs')
