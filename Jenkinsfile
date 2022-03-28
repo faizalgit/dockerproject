@@ -17,7 +17,7 @@ node{
 //	}
 	stage('Push to DockerHub'){
 		
-		withCredentials([usernamePassword(credentialsId: 'faizaldocker',
+		withCredentials([usernamePassword(credentialsId: 'FaizalNexus',
                               usernameVariable: 'username',
                               passwordVariable: 'password')]){
                               sh('echo $password | docker login -u $username --password-stdin http://104.196.30.112:9001')}
